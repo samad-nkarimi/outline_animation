@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:outline_animation/animation_widget.dart';
+import 'package:outline_animation/full_animation_widget.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,6 +16,6 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        home: const AnimationWidget(width: 300));
+        home: const FullAnimationWidget(width: 300));
   }
 }

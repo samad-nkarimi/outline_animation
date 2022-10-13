@@ -1,21 +1,21 @@
 import 'package:flutter/material.dart';
 
-import 'circle_widget.dart';
+import 'single_circle_widget.dart';
 import 'common_widgets/cw_container.dart';
 import 'common_widgets/cw_elevated_button.dart';
 import 'common_widgets/cw_text.dart';
 
 enum ActionType { none, start, stop, done, fail }
 
-class AnimationWidget extends StatefulWidget {
+class FullAnimationWidget extends StatefulWidget {
   final double width;
-  const AnimationWidget({Key? key, required this.width}) : super(key: key);
+  const FullAnimationWidget({Key? key, required this.width}) : super(key: key);
 
   @override
-  State<AnimationWidget> createState() => _AnimationWidgetState();
+  State<FullAnimationWidget> createState() => _FullAnimationWidgetState();
 }
 
-class _AnimationWidgetState extends State<AnimationWidget> {
+class _FullAnimationWidgetState extends State<FullAnimationWidget> {
   ActionType _action = ActionType.none;
   final List<double> _diameters = [1, 0.6, 0.35];
   final List<int> _rotationStartDelays = [500, 300, 100];
@@ -48,7 +48,7 @@ class _AnimationWidgetState extends State<AnimationWidget> {
             alignment: Alignment.center,
             children: [
               for (var i = 0; i < 3; i++)
-                CircleWidget(
+                SingleCircleWidget(
                   diameter: _diameters[i] * widget.width,
                   rotationStartDelay: _rotationStartDelays[i],
                   action: _action,

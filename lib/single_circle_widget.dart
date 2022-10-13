@@ -3,13 +3,13 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 
-import 'animation_widget.dart';
+import 'full_animation_widget.dart';
 
-class CircleWidget extends StatefulWidget {
+class SingleCircleWidget extends StatefulWidget {
   final double diameter;
   final int rotationStartDelay;
   final ActionType action;
-  const CircleWidget(
+  const SingleCircleWidget(
       {Key? key,
       required this.diameter,
       required this.rotationStartDelay,
@@ -17,10 +17,10 @@ class CircleWidget extends StatefulWidget {
       : super(key: key);
 
   @override
-  State<CircleWidget> createState() => _CircleWidgetState();
+  State<SingleCircleWidget> createState() => _SingleCircleWidgetState();
 }
 
-class _CircleWidgetState extends State<CircleWidget>
+class _SingleCircleWidgetState extends State<SingleCircleWidget>
     with TickerProviderStateMixin {
   late AnimationController rotationController;
   late Animation rotateAnimation;
@@ -127,7 +127,7 @@ class _CircleWidgetState extends State<CircleWidget>
 
   //*******
   @override
-  void didUpdateWidget(covariant CircleWidget oldWidget) {
+  void didUpdateWidget(covariant SingleCircleWidget oldWidget) {
     handleActions();
     super.didUpdateWidget(oldWidget);
   }
